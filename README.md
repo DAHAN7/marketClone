@@ -1,26 +1,33 @@
 marketclone 프로젝트
 1. 개요
-이 저장소는 marketclone 이라는 이름의 웹 애플리케이션 프로젝트를 포함하고 있습니다. 
-사용자 인증 (로그인, 회원가입) 및 상품 등록 기능을 구현하는 데 중점을 두고 있습니다.
-프론트엔드는 HTML, CSS, JavaScript를 사용하여 구현되었으며
+이 저장소는 marketclone 이라는 이름의 웹 애플리케이션 프로젝트를 포함하고 있습니다.
+사용자 인증 (로그인, 회원가입) 및 상품 등록 기능을  FastAPI 를 이용하여 구현하는 데 중점을 두고 있습니다.
+프론트엔드는 HTML, CSS, JavaScript를 사용하여 구현되었으며, 백엔드는 Python의 FastAPI 를 사용하여 RESTful API를 제공합니다. 데이터베이스는 SQLite 를 사용합니다.
+
 3. 구현된 기능
 사용자 인증:
 frontend/login.html, frontend/login.js: 로그인 페이지 및 관련 기능 구현
 frontend/signup.html, frontend/signup.js: 회원가입 페이지 및 관련 기능 구현
 상품 등록:
-frontend/wirte.html (오타 추정), frontend/write.js: 상품 등록 페이지 및 관련 기능 구현
-4. 기술 스택 (추정)
+frontend/wirte.html, frontend/write.js: 상품 등록 페이지 및 관련 기능 구현
+
+이미지 처리:
+이미지 업로드 및 데이터베이스 저장 기능 (/items 엔드포인트)
+이미지 조회 기능 (/images/{item_id} 엔드포인트)
+
+4. 기술 스택
 프론트엔드: HTML, CSS, JavaScript
-백엔드: Python (Flask 또는 Django 추정)
-데이터베이스: SQLite (assets/db.db 파일 존재)
+백엔드: Python (FastAPI)
+데이터베이스: SQLite (market.db)
+기타: fastapi-login (사용자 인증)
+
 5. 폴더 구조 설명
 frontend: 프론트엔드 코드 및 정적 파일 저장 폴더
 assets: 데이터베이스 파일 등 저장
 (root): 백엔드 코드 및 설정 파일 저장
-main.py: 백엔드 애플리케이션 메인 파일
+main.py: FastAPI 애플리케이션 메인 파일
 package-lock.json: npm 패키지 관리 파일 (프론트엔드 의존성)
-6. 추가 설명
-frontend/wirte.html 파일명은 frontend/write.html 오타로 추정됩니다.
-main.py 파일의 내용을 확인하여 백엔드 프레임워크 및 구현된 API를 파악해야 합니다.
-package-lock.json 파일을 통해 프론트엔드에서 사용하는 JavaScript 라이브러리 및 프레임워크를 확인할 수 있습니다.
-.gitignore 파일에는 Git 저장소에서 제외할 파일 및 폴더 목록이 포함되어 있습니다
+
+6. 실행 방법
+main.py 파일을 실행합니다.
+웹 브라우저에서 http://127.0.0.1:8000 에 접속합니다.
